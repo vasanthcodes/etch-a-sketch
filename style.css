@@ -10,7 +10,11 @@ header{
     padding: 30px;
     color: rgb(rgba(204, 120, 25, 0.233));
 }
-
+.div1{
+    display: flex;
+    justify-content: space-around;
+    
+}
 
 .mainDiv {
     display: flex;
