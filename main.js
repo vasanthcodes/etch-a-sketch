@@ -1,12 +1,10 @@
 
 
-const button1= document.querySelector(".button1").addEventListener('click',drawGrid())
+const button1= document.querySelector("#confirmGridNumber").addEventListener('click',()=>drawGrid())
 const mainDiv=document.querySelector(".mainDiv")
 function drawGrid(){
-    const gridNumber = document.querySelector("#myInput");
-    let num= Number(gridNumber.value);
-    // console.log(inputValue);
-    ;
+    const gridNumber = document.querySelector(".input grid").value;
+    gridNumber *= gridNumber;
     // if(gridNumber<=64){
     for(let i = 1;i<num*num;i++){
     const grid=document.createElement("div");
