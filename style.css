@@ -8,7 +8,7 @@ header{
     justify-content: center;
     font-size: 40px;
     padding: 30px;
-    color: rgb(rgba(204, 120, 25, 0.233));
+    background-color: rgb(rgba(204, 120, 25, 0.233));
 }
 .div1{
     display: flex;
@@ -28,8 +28,6 @@ header{
 .mainDiv div{
     
     height: auto;
-    width: 10px;
-    /* height: 40px; */
     align-items: center;
     flex: 1 1 0 ;
 }
