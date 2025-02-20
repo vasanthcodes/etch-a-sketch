@@ -18,20 +18,16 @@ header {
   justify-content: space-around;
 }
 
-.mainDiv {
+.container {
   display: flex;
   width: 100%;
+  max-height: 600px;
   max-width: 600px;
   justify-content: center;
   align-items: center;
   border: solid black 5px;
   justify-self: center;
   flex-wrap: wrap;
-  /* align-content: center; */
+  
 }
 
-.mainDiv div{
-  border: solid black 1px;
-  width: 300px;
-  flex: auto;
-}
