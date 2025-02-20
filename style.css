@@ -2,20 +2,19 @@
 * {
   font-family: Atkinson Hyperlegible;
   box-sizing: content-box;
-  
 }
-body{
-    background-color: mediumslateblue;
+body {
+  background-color: mediumslateblue;
 }
 header {
   display: flex;
   justify-content: center;
   font-size: 40px;
-  padding: 30px;    
+  padding: 30px;
 }
 .div1 {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .container {
@@ -28,6 +27,10 @@ header {
   border: solid black 5px;
   justify-self: center;
   flex-wrap: wrap;
-  
 }
 
+#colorpicker {
+  /* border: 0px;  */
+  padding: 1px;
+  border-radius: 2px;
+}
