@@ -33,3 +33,9 @@ header {
 #colorpicker {
   padding: 1px;
 }
+
+.note{
+  display: flex;
+  padding-top: 30px;
+  padding-left: 30px;
+  }
