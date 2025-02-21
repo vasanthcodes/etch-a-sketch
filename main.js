@@ -2,27 +2,32 @@ const grid = document.querySelector(".container");
 const reset = document.querySelector("#reset");
 const num = document.querySelector("#confirmGridNumber");
 var click = document.querySelector("#click");
+var colorpicker = document.querySelector("#colorpicker");
 let box;
 
 var onc = "mouseover";
 click.addEventListener("click", () => {
-  if(onc==="mouseover"){
-    click.innerHTML="Hover mode"
+  if (onc === "mouseover") {
+    click.innerHTML = "Hover mode";
     onc = "click";
-  }else{
-  click.innerHTML="Click mode"
-  onc="mouseover"
-  
-}
-newGrid();
+  } else {
+    click.innerHTML = "Click mode";
+    onc = "mouseover";
+  }
+  newGrid();
 });
 function newGrid(size) {
   grid.innerHTML = "";
   let gridSize = document.querySelector(".input-grid").value;
-  if (size === undefined) {
-    size = 16;
+  if (Number(document.querySelector(".input-grid").value) >= 200) {
+    alert("The limit is only 200");
+    size = 200;
   } else {
-    size = gridSize;
+    if (size === undefined) {
+      size = 16;
+    } else {
+      size = gridSize;
+    }
   }
 
   for (let i = 1; i <= size ** 2; i++) {
@@ -37,7 +42,7 @@ function newGrid(size) {
   const select = grid.querySelectorAll("div");
   select.forEach((box) => {
     box.addEventListener(`${onc}`, () => {
-      box.style.backgroundColor = "black";
+      box.style.backgroundColor = colorpicker.value;
     });
   });
 }
@@ -50,7 +55,3 @@ reset.addEventListener("click", () => {
     box.style.backgroundColor = "white";
   });
 });
-if(document.querySelector(".input-grid").value>=200){
-  alert("The limit is only 200")
-  newGrid()
-}
