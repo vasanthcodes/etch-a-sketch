@@ -1,15 +1,30 @@
 const grid = document.querySelector(".container");
 const reset = document.querySelector("#reset");
 const num = document.querySelector("#confirmGridNumber");
-let box
+var click = document.querySelector("#click");
+let box;
+
+var onc = "mouseover";
+click.addEventListener("click", () => {
+  if(onc==="mouseover"){
+    click.innerHTML="Hover mode"
+    onc = "click";
+  }else{
+  click.innerHTML="Click mode"
+  onc="mouseover"
+  
+}
+newGrid();
+});
 function newGrid(size) {
   grid.innerHTML = "";
   let gridSize = document.querySelector(".input-grid").value;
   if (size === undefined) {
     size = 16;
+  } else {
+    size = gridSize;
   }
 
-  size = gridSize;
   for (let i = 1; i <= size ** 2; i++) {
     box = document.createElement("div");
     grid.appendChild(box);
@@ -19,11 +34,23 @@ function newGrid(size) {
       `width:${width}px; height: ${width}px; background-color: white`
     );
   }
+  const select = grid.querySelectorAll("div");
+  select.forEach((box) => {
+    box.addEventListener(`${onc}`, () => {
+      box.style.backgroundColor = "black";
+    });
+  });
 }
 
-function hover() {
-   box.style.backgroundColor="black";
-}
-
+newGrid();
 num.addEventListener("click", newGrid);
-grid.addEventListener("mouseover",hover)
+reset.addEventListener("click", () => {
+  const select = grid.querySelectorAll("div");
+  select.forEach((box) => {
+    box.style.backgroundColor = "white";
+  });
+});
+if(document.querySelector(".input-grid").value>=200){
+  alert("The limit is only 200")
+  newGrid()
+}
