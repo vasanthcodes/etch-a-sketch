@@ -2,7 +2,8 @@ const grid = document.querySelector(".container");
 const reset = document.querySelector("#reset");
 const num = document.querySelector("#confirmGridNumber");
 var click = document.querySelector("#click");
-var colorpicker = document.querySelector("#colorpicker");
+var colorpicker = document.querySelector("#colorpick");
+let random = document.querySelector("#random");
 let box;
 
 var onc = "mouseover";
@@ -39,12 +40,7 @@ function newGrid(size) {
       `width:${width}px; height: ${width}px; background-color: white`
     );
   }
-  const select = grid.querySelectorAll("div");
-  select.forEach((box) => {
-    box.addEventListener(`${onc}`, () => {
-      box.style.backgroundColor = colorpicker.value;
-    });
-  });
+ normal()
 }
 
 newGrid();
@@ -55,3 +51,28 @@ reset.addEventListener("click", () => {
     box.style.backgroundColor = "white";
   });
 });
+reset.addEventListener("click",normal);
+reset.addEventListener("click",normal);
+
+random.addEventListener("click",randomizer);
+
+function randomizer() {
+  const select = grid.querySelectorAll("div");
+  select.forEach((box) => {
+    box.addEventListener(`${onc}`, () => {
+      box.style.backgroundColor = `rgb(${Math.floor(
+        Math.random() * 500
+      )}, ${Math.floor(Math.random() * 500)}, ${Math.floor(
+        Math.random() * 500
+      )})`;
+    });
+  });
+}
+function normal(){
+  const select = grid.querySelectorAll("div");
+  select.forEach((box) => {
+    box.addEventListener(`${onc}`, () => {
+      box.style.backgroundColor = colorpicker.value;
+    });
+  })
+}
