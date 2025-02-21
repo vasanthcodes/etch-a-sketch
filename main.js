@@ -15,7 +15,7 @@ click.addEventListener("click", () => {
     click.innerHTML = "Click mode";
     onc = "mouseover";
   }
-  // newGrid();
+  newGrid();
 });
 function newGrid(size) {
   grid.innerHTML = "";
